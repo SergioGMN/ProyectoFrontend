@@ -1,6 +1,7 @@
 export { Registro };
 
-import { Menu } from "../componentes/menu.js";
+import "./registro.css";
+import { Menu } from "../../componentes/Menu/menu.js";
 
 function Registro(main) {
     // Form registro

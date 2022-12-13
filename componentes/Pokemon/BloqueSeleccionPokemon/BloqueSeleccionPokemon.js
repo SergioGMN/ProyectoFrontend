@@ -1,7 +1,9 @@
 export { BloqueSeleccionPokemon };
 
-import { getDatosPokemon, getListaPokemon } from "../../service/pokeApi.js";
-import { DatosPokemonGrande } from "./DatosPokemonGrande.js";
+import './BloqueSeleccionPokemon.css';
+import Loading from './loading.gif';
+import { getDatosPokemon, getListaPokemon } from "../../../service/pokeApi.js";
+import { DatosPokemonGrande } from "../DatosPokemonGrande/DatosPokemonGrande.js";
 
 async function BloqueSeleccionPokemon(gen) {
     let div = document.createElement("div");
@@ -91,7 +93,7 @@ async function reGenerarMenuSeleccionPokemon(gen) {
     let listaPokemon = document.querySelector("#listaPokemon");
 
     let gifCargando = document.createElement("img");
-    gifCargando.src = "./img/loading.gif";
+    gifCargando.src = Loading;
     gifCargando.classList.add("cargando");
     listaPokemon.innerHTML = "";
     listaPokemon.append(gifCargando);

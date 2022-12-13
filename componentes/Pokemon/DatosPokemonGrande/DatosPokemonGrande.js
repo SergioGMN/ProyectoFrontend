@@ -1,6 +1,7 @@
 export { DatosPokemonGrande };
 
-import { getDatosPokemon } from "../../service/pokeApi.js";
+import "./datosPokemonGrande.css";
+import { getDatosPokemon } from "../../../service/pokeApi.js";
 
 function DatosPokemonGrande(pokemon) {
     let div = document.createElement("div");

@@ -1,5 +1,7 @@
 export { Menu };
 
+import './menu.css';
+
 let listaLinks = [
     {
         titulo: "Inicio",

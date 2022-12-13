@@ -1,0 +1,38 @@
+/* Variables color */
+:root {
+    --color-background: #282c34;
+    --color-background-link: #242e2b;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #000000;
+    --color-button-primary: rgb(154, 116, 21);
+    --color-button-hover: darkgoldenrod;
+    --color-border-primary: rgba(255, 255, 255, 0.534);
+    --color-border-secondary: black;
+}
+
+nav {
+    display: flex;
+
+    height: 6rem;
+    border-bottom: 2px solid var(--color-border-primary);
+}
+
+nav a {
+    font-size: 2.3em;
+    text-decoration: none;
+
+    color: white;
+    padding: 10px 30px;
+    background-color: var(--color-background-link);
+
+    display: flex;
+    align-items: center;
+}
+
+nav a.active {
+    background-color: var(--color-button-primary);
+}
+
+nav a:hover {
+    background-color: var(--color-button-hover);
+}

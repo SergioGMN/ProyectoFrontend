@@ -1,0 +1,27 @@
+:root {
+    --color-background: #282c34;
+    --color-background-link: #242e2b;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #000000;
+    --color-button-primary: rgb(154, 116, 21);
+    --color-button-hover: darkgoldenrod;
+    --color-border-primary: rgba(255, 255, 255, 0.534);
+    --color-border-secondary: black;
+}
+
+#boton-subir {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    padding: 10px 20px;
+    background-color: var(--color-button-primary);
+    color: var(--color-text-primary);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 500;
+}
+
+#boton-subir:hover {
+    background-color: var(--color-button-hover);
+}

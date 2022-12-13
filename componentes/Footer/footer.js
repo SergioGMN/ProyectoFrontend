@@ -1,5 +1,7 @@
 export { Footer };
 
+import "./footer.css";
+
 function Footer() {
     let footer = document.createElement("footer");
     footer.id = "footer";

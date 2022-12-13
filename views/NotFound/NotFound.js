@@ -1,6 +1,8 @@
 export { NotFound };
 
-import { Menu } from "../componentes/menu.js";
+import "./notFound.css";
+import Image from "./404.webp";
+import { Menu } from "../../componentes/Menu/menu.js";
 
 function NotFound(main) {
     let contenido = document.createElement("div");
@@ -14,7 +16,7 @@ function NotFound(main) {
     h2sup.append(txtH2sup);
     h2inf.append(txtH2inf);
     
-    img.src = "./img/404.webp";
+    img.src = Image;
     contenido.classList.add("notFound");
     contenido.id = "contenido";
     contenido.append(h2sup, img, h2inf);

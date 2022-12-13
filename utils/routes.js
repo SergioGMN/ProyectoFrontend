@@ -1,8 +1,8 @@
 export { Route }
 
-import { Home } from "./views/home.js";
-import { Registro } from "./views/registro.js";
-import { NotFound } from "./views/NotFound.js";
+import { Home } from "../views/Home/home.js";
+import { Registro } from "../views/Registro/registro.js";
+import { NotFound } from "../views/NotFound/NotFound.js";
 
 function Route(ruta, main) {
     if (ruta == "") ruta = "#/";

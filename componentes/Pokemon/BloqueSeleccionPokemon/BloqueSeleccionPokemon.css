@@ -1,0 +1,80 @@
+:root {
+    --color-background: #282c34;
+    --color-background-link: #242e2b;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #000000;
+    --color-button-primary: rgb(154, 116, 21);
+    --color-button-hover: darkgoldenrod;
+    --color-border-primary: rgba(255, 255, 255, 0.534);
+    --color-border-secondary: black;
+}
+
+#selectorPokemon {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+    width: 80vw;
+    border: 2px solid var(--color-border-secondary);
+}
+
+.listaPokemon {
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.listaPokemon .contSprite {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.contSprite img {
+    width: 4rem;
+}
+
+.contSprite:hover {
+    outline: 2px solid var(--color-button-hover);
+    cursor: pointer;
+}
+
+.listaGeneraciones {
+    display: flex;
+    margin-bottom: 4px;
+    justify-content: space-around;
+    background-color: #242e2b;
+    border-bottom: 2px solid var(--color-border-primary);
+}
+
+.listaGeneraciones div {
+    display: inline-block;
+    padding: 1rem;
+    background-color: #242e2b;
+    font-size: 1.5em;
+    cursor: pointer;
+
+    flex-grow: 1;
+    text-align: center;
+}
+
+.listaGeneraciones div:hover {
+    background-color: darkgoldenrod;
+}
+
+.listaGeneraciones .active {
+    background-color: #9a7415;
+    cursor: default;
+}
+
+.listaGeneraciones .active:hover {
+    background-color: #9a7415;
+}
+
+.cargando {
+    width: 5em;
+    padding: 2em;
+}

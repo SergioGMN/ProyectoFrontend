@@ -1,0 +1,85 @@
+:root {
+    --color-background: #282c34;
+    --color-background-link: #242e2b;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #000000;
+    --color-button-primary: rgb(154, 116, 21);
+    --color-button-hover: darkgoldenrod;
+    --color-border-primary: rgba(255, 255, 255, 0.534);
+    --color-border-secondary: black;
+}
+
+.formRegistro,
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+    width: 15rem;
+    color: black;
+    background-color: rgb(206, 241, 255);
+    padding: 2rem;
+    border-radius: 15px;
+    min-height: 20rem;
+}
+
+.formLogin {
+    /* justify-content: flex-start; */
+}
+
+.formLogin form {
+    flex-grow: 1;
+}
+
+.formLogin form input[type="submit"] {
+    flex-grow: 1;
+}
+
+.formRegistro h3,
+.formLogin h3 {
+    font-size: 1.6rem;
+    border-bottom: 3px solid black;
+    padding-bottom: 4px;
+    text-align: center;
+}
+
+.formRegistro form,
+.formLogin form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formRegistro input[type="text"],
+.formRegistro input[type="password"],
+.formLogin input[type="text"],
+.formLogin input[type="password"] {
+    padding: 10px;
+    margin: 5px 0 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.formRegistro label,
+.formLogin label {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.2rem;
+}
+
+.formRegistro button,
+.formLogin button {
+    margin: 20px 0 0 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.wrapper-forms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
