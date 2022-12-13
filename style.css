@@ -1,0 +1,420 @@
+/* Variables color */
+:root {
+    --color-background: #282c34;
+    --color-background-link: #242e2b;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #000000;
+    --color-button-primary: rgb(154, 116, 21);
+    --color-button-hover: darkgoldenrod;
+    --color-border-primary: rgba(255, 255, 255, 0.534);
+    --color-border-secondary: black;
+}
+
+/* GENERICOS */
+html {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+}
+
+#contenido {
+    display: flex;
+    flex-direction: column;
+}
+
+#main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.flexCenterHor {
+    margin: 5rem auto;
+}
+
+/* 404 */
+.notFound {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.notFound h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* NAVEGACION */
+nav {
+    display: flex;
+
+    height: 6rem;
+    border-bottom: 2px solid var(--color-border-primary);
+}
+
+nav a {
+    font-size: 2.3em;
+    text-decoration: none;
+
+    color: white;
+    padding: 10px 30px;
+    background-color: var(--color-background-link);
+
+    display: flex;
+    align-items: center;
+}
+
+nav a.active {
+    background-color: var(--color-button-primary);
+}
+
+nav a:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* POKEMON */
+#recuadroPokemon {
+    /* display: flex;
+    justify-content: center;
+    margin: 2rem auto; */
+
+    display: inline-grid;
+    grid-template-columns: 250px 250px 250px;
+}
+
+#recuadroPokemon .bloqueFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#recuadroPokemon h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0.5rem 0;
+}
+
+#recuadroPokemon .left {
+    flex-direction: column;
+}
+
+#recuadroPokemon .hor {
+    display: flex;
+    gap: 10px;
+}
+
+#recuadroPokemon .tipo {
+    padding: 2px 10px;
+    border: 1px solid var(--color-border-secondary);
+    border-radius: 25px;
+}
+
+#recuadroPokemon #stats {
+    display: flex;
+    gap: 10px;
+    margin-top: 0.5rem;
+}
+
+#recuadroPokemon .center {
+    display: flex;
+}
+
+#recuadroPokemon img {
+    margin: auto 3rem;
+    height: 12rem;
+}
+
+.normal {
+    background-color: #a8a878;
+    color: #000000;
+}
+
+.fighting {
+    background-color: #c03028;
+    color: #ffffff;
+}
+
+.flying {
+    background-color: #a890f0;
+    color: #000000;
+}
+
+.poison {
+    background-color: #a040a0;
+    color: #ffffff;
+}
+
+.ground {
+    background-color: #e0c068;
+    color: #000000;
+}
+
+.rock {
+    background-color: #b8a038;
+    color: #000000;
+}
+
+.bug {
+    background-color: #a8b820;
+    color: #000000;
+}
+
+.ghost {
+    background-color: #705898;
+    color: #ffffff;
+}
+
+.steel {
+    background-color: #b8b8d0;
+    color: #000000;
+}
+
+.fire {
+    background-color: #f08030;
+    color: #000000;
+}
+
+.water {
+    background-color: #6890f0;
+    color: #000000;
+}
+
+.grass {
+    background-color: #78c850;
+    color: #000000;
+}
+
+.electric {
+    background-color: #f8d030;
+    color: #000000;
+}
+
+.psychic {
+    background-color: #f85888;
+    color: #000000;
+}
+
+.ice {
+    background-color: #98d8d8;
+    color: #000000;
+}
+
+.dragon {
+    background-color: #7038f8;
+    color: #ffffff;
+}
+
+.dark {
+    background-color: #705848;
+    color: #ffffff;
+}
+
+.fairy {
+    background-color: #ee99ac;
+    color: #000000;
+}
+
+.movimiento {
+    display: flex;
+    border-radius: 25px;
+    border: 2px solid var(--color-border-secondary);
+
+    color: var(--color-text-secondary);
+
+    padding: 0.2rem;
+    margin: 0.2rem;
+
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
+}
+
+.electrico {
+    background-color: #f8bc1c;
+}
+
+.volador {
+    background-color: #8197e9;
+}
+
+.fuego {
+    background-color: #cd2603;
+}
+
+.agua {
+    background-color: #2f95f5;
+}
+
+.gridMovimientos {
+    display: grid;
+    margin: auto 1rem;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 50px 50px;
+}
+
+/* LISTA POKEMONES */
+
+#selectorPokemon {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+    width: 80vw;
+    border: 2px solid var(--color-border-secondary);
+}
+
+.listaPokemon {
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.listaPokemon .contSprite {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.contSprite img {
+    width: 4rem;
+}
+
+.contSprite:hover {
+    outline: 2px solid var(--color-button-hover);
+    cursor: pointer;
+}
+
+.listaGeneraciones {
+    display: flex;
+    margin-bottom: 4px;
+    justify-content: space-around;
+    background-color: #242e2b;
+    border-bottom: 2px solid var(--color-border-primary);
+}
+
+.listaGeneraciones div {
+    display: inline-block;
+    padding: 1rem;
+    background-color: #242e2b;
+    font-size: 1.5em;
+    cursor: pointer;
+
+    flex-grow: 1;
+    text-align: center;
+}
+
+.listaGeneraciones div:hover {
+    background-color: darkgoldenrod;
+}
+
+.listaGeneraciones .active {
+    background-color: #9a7415;
+    cursor: default;
+}
+
+.listaGeneraciones .active:hover {
+    background-color: #9a7415;
+}
+
+.cargando {
+    width: 5em;
+    padding: 2em;
+}
+
+/* REGISTRO */
+.formRegistro,
+.formLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+    width: 15rem;
+    color: black;
+    background-color: rgb(206, 241, 255);
+    padding: 2rem;
+    border-radius: 15px;
+    min-height: 20rem;
+}
+
+.formLogin {
+    /* justify-content: flex-start; */
+}
+
+.formLogin form {
+    flex-grow: 1;
+}
+
+.formLogin form input[type="submit"] {
+    flex-grow: 1;
+}
+
+.formRegistro h3,
+.formLogin h3 {
+    font-size: 1.6rem;
+    border-bottom: 3px solid black;
+    padding-bottom: 4px;
+    text-align: center;
+}
+
+.formRegistro form,
+.formLogin form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formRegistro input[type="text"],
+.formRegistro input[type="password"],
+.formLogin input[type="text"],
+.formLogin input[type="password"] {
+    padding: 10px;
+    margin: 5px 0 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.formRegistro label,
+.formLogin label {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.2rem;
+}
+
+.formRegistro button,
+.formLogin button {
+    margin: 20px 0 0 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.wrapper-forms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* PIE */
+#boton-subir {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    padding: 10px 20px;
+    background-color: var(--color-button-primary);
+    color: var(--color-text-primary);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    z-index: 500;
+}
+
+#boton-subir:hover {
+    background-color: var(--color-button-hover);
+}
