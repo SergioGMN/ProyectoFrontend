@@ -37,10 +37,10 @@ function DatosPokemonGrande(pokemon) {
             </div>
             
             <div class="gridMovimientos">
-            <div class="movimiento electrico">Impactrueno</div>
-            <div class="movimiento volador">Vuelo</div>
-            <div class="movimiento fuego">Lanzallamas</div>
-            <div class="movimiento agua">Surf</div>
+            <div class="movimiento electrico">Pro</div>
+            <div class="movimiento volador">Vi</div>
+            <div class="movimiento fuego">Sio</div>
+            <div class="movimiento agua">Nal</div>
             </div>
             </div>
             `;

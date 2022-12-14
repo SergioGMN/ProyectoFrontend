@@ -2,7 +2,7 @@ export { NotFound };
 
 import "./notFound.css";
 import Image from "./404.webp";
-import { Menu } from "../../componentes/Menu/menu.js";
+import { Menu } from "../../componentes/Menu/Menu.js";
 
 function NotFound(main) {
     let contenido = document.createElement("div");
@@ -22,4 +22,5 @@ function NotFound(main) {
     contenido.append(h2sup, img, h2inf);
 
     main.append(Menu(""), contenido);
+    document.title = "404";
 }

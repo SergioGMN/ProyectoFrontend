@@ -1,11 +1,11 @@
 export { Home };
 
-import { Menu } from "../../componentes/Menu/menu.js";
-import { Footer } from "../../componentes/Footer/footer.js";
-import {DatosPokemonGrande } from "../../componentes/Pokemon/DatosPokemonGrande/DatosPokemonGrande.js";
+import "./style.css";
+import { Menu } from "../../componentes/Menu/Menu.js";
+import { Footer } from "../../componentes/Footer/Footer.js";
+import { DatosPokemonGrande } from "../../componentes/Pokemon/DatosPokemonGrande/DatosPokemonGrande.js";
 import { BloqueSeleccionPokemon } from "../../componentes/Pokemon/BloqueSeleccionPokemon/BloqueSeleccionPokemon.js";
 import { getCookie } from "../../utils/cookies.js";
-
 
 async function Home(main) {
     let contenido = document.createElement("div");
@@ -20,4 +20,5 @@ async function Home(main) {
     );
 
     main.append(Menu("Inicio"), contenido, Footer());
+    document.title = "Inicio";
 }

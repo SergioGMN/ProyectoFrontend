@@ -25,3 +25,14 @@
 #boton-subir:hover {
     background-color: var(--color-button-hover);
 }
+
+
+#pie {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--color-border-primary);
+    font-size: 0.8rem;
+    text-align: center;
+}

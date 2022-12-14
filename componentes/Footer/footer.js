@@ -6,9 +6,20 @@ function Footer() {
     let footer = document.createElement("footer");
     footer.id = "footer";
 
-    footer.append(crearBotonSubir());
+    footer.append(crearBotonSubir(), crearPie());
 
     return footer;
+}
+
+function crearPie() {
+    let pie = document.createElement("div");
+    pie.id = "pie";
+
+    let texto = document.createElement("p");
+    texto.innerHTML = "&copy; Sergio Gimeno para la asignatura Desarrollo Web en Entorno Cliente de 2º de DAW";
+    pie.appendChild(texto);
+
+    return pie;
 }
 
 function crearBotonSubir() {

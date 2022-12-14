@@ -9,7 +9,7 @@ let listaLinks = [
     },
     {
         titulo: "Apartado 2",
-        url: "lolKEK",
+        url: "#/apartado2",
     },
     {
         titulo: "Registro",
