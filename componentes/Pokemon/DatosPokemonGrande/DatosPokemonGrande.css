@@ -182,9 +182,7 @@
     background-color: #2f95f5;
 }
 
-.gridMovimientos {
-    display: grid;
-    margin: auto 1rem;
-    grid-template-columns: 150px 150px;
-    grid-template-rows: 50px 50px;
+#recuadroPokemon canvas {
+    width: 250px !important;
+    height: 250px !important;
 }

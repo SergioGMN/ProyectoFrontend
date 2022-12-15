@@ -2,6 +2,7 @@ export { DatosPokemonGrande };
 
 import "./datosPokemonGrande.css";
 import { getDatosPokemon } from "../../../service/pokeApi.js";
+import { Chart } from "chart.js/auto";
 
 function DatosPokemonGrande(pokemon) {
     let div = document.createElement("div");
@@ -9,8 +10,9 @@ function DatosPokemonGrande(pokemon) {
     div.classList.add("flexCenterHor");
 
     getDatosPokemon(pokemon).then((pokemon) => {
-        div.innerHTML = `
-    <div id="recuadroPokemon">
+        let recuadroPokemon = document.createElement("div");
+        recuadroPokemon.id = "recuadroPokemon";
+        recuadroPokemon.innerHTML = `
         <div class="bloqueFlex">
             <h1>${capitalizarPrimeraLetra(pokemon.species.name)}</h1>
             <div class="hor">
@@ -34,16 +36,16 @@ function DatosPokemonGrande(pokemon) {
             <img src="${
                 pokemon.sprites.other["official-artwork"].front_default
             }" alt="Ditto xD">
-            </div>
-            
-            <div class="gridMovimientos">
-            <div class="movimiento electrico">Pro</div>
-            <div class="movimiento volador">Vi</div>
-            <div class="movimiento fuego">Sio</div>
-            <div class="movimiento agua">Nal</div>
-            </div>
-            </div>
-            `;
+        </div>
+        `;
+
+        let canvas = createChart(createData(pokemon.stats));
+
+        console.log(canvas);
+
+        recuadroPokemon.append(canvas);
+
+        div.append(recuadroPokemon);
     });
 
     return div;
@@ -85,4 +87,83 @@ function generarRecuadrosTipo(tipos) {
             }</div>`;
         })
         .join("");
+}
+
+function createChart(data) {
+    let config = {
+        type: "radar",
+        data: data,
+        options: {
+            responsive: true,
+            elements: {
+                line: {
+                    borderWidth: 3,
+                },
+            },
+            plugins: {
+                legend: {
+                    display: false,
+                },
+            },
+            tooltips: {
+                callbacks: {
+                    label: function (tooltipItem) {
+                        return tooltipItem.yLabel;
+                    },
+                },
+            },
+            scales: {
+                r: {
+                    angleLines: {
+                        color: "white",
+                    },
+                    grid: {
+                        color: "white",
+                    },
+                    ticks: {
+                        display: true,
+                        stepSize: 100,
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 160,
+                },
+            },
+            layout: {
+                autoPadding: false,
+                padding: 0,
+            },
+        },
+    };
+
+    let canvas = document.createElement("canvas");
+    canvas.id = "chart";
+
+    console.log(canvas);
+
+    new Chart(canvas, config);
+
+    return canvas;
+}
+
+function createData(pokemonStats) {
+    pokemonStats = pokemonStats.map((stat) => stat.base_stat);
+
+    let data = {
+        labels: ["HP", "Atk", "Def", "Sp. Atk", "Sp. Def", "Vel"],
+        datasets: [
+            {
+                label: "",
+                data: pokemonStats,
+                fill: true,
+                backgroundColor: "rgba(255, 99, 132, 0.2)",
+                borderColor: "rgb(255, 99, 132)",
+                pointBackgroundColor: "rgb(255, 99, 132)",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "rgb(255, 99, 132)",
+            },
+        ],
+    };
+
+    return data;
 }

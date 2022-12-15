@@ -1,4 +1,3 @@
-/* Variables color */
 :root {
     --color-background: #282c34;
     --color-background-link: #242e2b;
@@ -12,6 +11,7 @@
 
 nav {
     display: flex;
+    flex-direction: row;
 
     height: 6rem;
     border-bottom: 2px solid var(--color-border-primary);

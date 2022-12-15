@@ -1,6 +1,6 @@
 export { Home };
 
-import "./style.css";
+import './style.css';
 import { Menu } from "../../componentes/Menu/Menu.js";
 import { Footer } from "../../componentes/Footer/Footer.js";
 import { DatosPokemonGrande } from "../../componentes/Pokemon/DatosPokemonGrande/DatosPokemonGrande.js";
