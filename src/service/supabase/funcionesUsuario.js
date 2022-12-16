@@ -70,5 +70,4 @@ function isLogged() {
 
 async function forgotPassword(email) {
     let responseForgot = await recoverPassword(email);
-    console.log(responseForgot);
 }

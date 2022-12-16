@@ -63,10 +63,8 @@ function FormRegistro() {
 
         await registerUser(email, pass1).then((res) => { // FLECHA
             if (!res.ok) {
-                console.log(res.error);
                 alert(res.error.message);
             } else {
-                console.log(res);
                 alert("Usuario registrado correctamente!");
                 window.location.hash = "#/perfil";
             }

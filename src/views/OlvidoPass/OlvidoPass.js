@@ -40,9 +40,7 @@ function crearForm() {
             return;
         }
 
-        await forgotPassword(email).then((res) => {
-            console.log(res);
-        });
+        await forgotPassword(email);
     });
 
     return formOlvidoPass;
