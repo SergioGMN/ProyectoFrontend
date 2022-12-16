@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { SourceMapDevToolPlugin } = require("webpack");
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: "./src/index.js",
     plugins: [
         new HtmlWebpackPlugin({

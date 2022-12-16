@@ -21,6 +21,7 @@ function FormRegistro() {
     submitRegistro.innerHTML = "Registrar";
     submitRegistro.id = "submitRegistro";
 
+    // TEMPLATE LITERAL
     let formRegistroHtml = `
       <label for="user-registro">Email:</label>
       <input type="text" name="user" id="user-registro">
@@ -36,7 +37,7 @@ function FormRegistro() {
     formRegistro.append(submitRegistro);
     contenidoRegistro.append(tituloRegistro, formRegistro);
 
-    submitRegistro.addEventListener("click", async (e) => {
+    submitRegistro.addEventListener("click", async (e) => { // FLECHA
         e.preventDefault();
 
         let email = document.getElementById("user-registro").value;
@@ -60,7 +61,7 @@ function FormRegistro() {
             return;
         }
 
-        await registerUser(email, pass1).then((res) => {
+        await registerUser(email, pass1).then((res) => { // FLECHA
             if (!res.ok) {
                 console.log(res.error);
                 alert(res.error.message);
@@ -103,13 +104,13 @@ function FormLogin() {
     formLogin.append(olvidoPass, submitLogin);
     contenidoLogin.append(tituloLogin, formLogin);
 
-    submitLogin.addEventListener("click", async (e) => {
+    submitLogin.addEventListener("click", async (e) => { // FLECHA
         e.preventDefault();
 
         let email = document.getElementById("user-login").value;
         let password = document.getElementById("pass-login").value;
 
-        await loginPass(email, password).then((res) => {
+        await loginPass(email, password).then((res) => { // FLECHA
             if (email == "" || password == "") {
                 alert("Rellena todos los campos!");
                 return;

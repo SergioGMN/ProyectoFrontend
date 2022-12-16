@@ -4,14 +4,11 @@ import { isLogged } from '../../service/supabase/funcionesUsuario';
 
 import './menu.css';
 
+//OBJETO LITERAL
 let listaLinks = [
     {
         titulo: "Inicio",
         url: "#/",
-    },
-    {
-        titulo: "Apartado 2",
-        url: "#/apartado2",
     },
     {
         titulo: "Login",
@@ -21,6 +18,7 @@ let listaLinks = [
 ];
 
 // Si el usuario está logeado, se cambia el link de login por el de perfil
+//OBJETO LITERAL
 if (isLogged()) {
     listaLinks = [
         {
@@ -47,7 +45,7 @@ function Menu(apartadoActivo) {
         listaLinksCreados.push(generarLink(link, apartadoActivo));
     }
 
-    nav.append(...listaLinksCreados);
+    nav.append(...listaLinksCreados); // DESTRUCTURING
 
     return nav;
 }

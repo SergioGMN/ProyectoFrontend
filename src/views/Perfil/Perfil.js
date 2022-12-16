@@ -4,9 +4,7 @@ import './Perfil.css';
 
 import { Menu } from "../../componentes/Menu/Menu.js";
 import { Footer } from "../../componentes/Footer/Footer.js";
-import { isLogged, logoutUser, getProfile } from "../../service/supabase/funcionesUsuario.js";
-
-import { getUserData, getDatosUsuarioLogeado } from '../../service/supabase/peticionesApi';
+import { isLogged, logoutUser } from "../../service/supabase/funcionesUsuario.js";
 
 async function Perfil(main) {
     if (!isLogged()) {
@@ -14,14 +12,8 @@ async function Perfil(main) {
         return;
     }
 
-    getDatosUsuarioLogeado().then((data) => {
-        console.log(data);
-    });
-
     let contenido = document.createElement("div");
     contenido.id = "contenido";
-
-
 
     contenido.append(
         Menu("Perfil"),
@@ -33,7 +25,7 @@ async function Perfil(main) {
     document.title = "Perfil";
 }
 
-function crearPerfil(datosPerfil) {
+function crearPerfil() {
     let perfil = document.createElement("div");
     perfil.id = "perfil";    
 
@@ -60,6 +52,7 @@ function crearPerfil(datosPerfil) {
 
     perfil.innerHTML = perfilHtml;
 
+    // QUERY SELECTOR a un elemento que no existe en el DOM todavía (ojalá haberlo sabido antes)
     perfil.querySelector("#logout").addEventListener("click", () => {
         logoutUser();
         window.location.hash = "#/registro";

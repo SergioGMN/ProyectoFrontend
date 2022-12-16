@@ -14,7 +14,7 @@ async function BloqueSeleccionPokemon(gen) {
     let listaPokemon = document.createElement("div");
     listaPokemon.classList.add("listaPokemon");
     listaPokemon.id = "listaPokemon";
-    listaPokemon.append(...listaDivs);
+    listaPokemon.append(...listaDivs); // DESTRUCTURING
 
     div.append(await generarMenuSeleccionGeneracion(gen), listaPokemon);
 
@@ -27,10 +27,10 @@ async function generarMenuSeleccionGeneracion(gen) {
 
     for (let i = 1; i <= 8; i++) {
         let opcionGen = document.createElement("div");
-        opcionGen.innerHTML = `Gen ${i}`;
-        opcionGen.id = `gen${i}`;
+        opcionGen.innerHTML = `Gen ${i}`; // TEMPLATE LITERAL
+        opcionGen.id = `gen${i}`; // TEMPLATE LITERAL
 
-        opcionGen.addEventListener("click", () => {
+        opcionGen.addEventListener("click", () => { // FLECHA
             selectGeneracion(opcionGen.id);
         });
 
@@ -56,6 +56,7 @@ async function generarDivsListaPokemones(gen) {
 
         div.classList.add("contSprite");
         div.id = `pokeSlot${datosPokemon.id}`;
+        // TEMPLATE LITERAL
         div.innerHTML = `
         <img src="${datosPokemon.sprites.front_default}" alt="Sprite de ${
             pokemon.name
@@ -64,7 +65,7 @@ async function generarDivsListaPokemones(gen) {
         `;
 
         // Al pulsar en un pokemon se cambia el pokemon principal
-        div.addEventListener("click", () => {
+        div.addEventListener("click", () => { // FLECHA
             selectPokemon(pokemon);
         });
 
@@ -76,13 +77,14 @@ async function generarDivsListaPokemones(gen) {
 
 async function reGenerarMenuSeleccionPokemon(gen) {
     // Comprueba si la generación seleccionada es la misma que la que ya está activa para no hacer nada
-    if (document.querySelector(`#gen${gen}`).classList.contains("active")) {
+    if (document.querySelector(`#gen${gen}`).classList.contains("active")) { // QUERY SELECTOR
         return;
     }
 
+    // ITERABLE
     // Quita el activo de la lista de generaciones
-    let listaGen = document.querySelectorAll(".listaGeneraciones div");
-    listaGen.forEach((gen) => {
+    let listaGen = document.querySelectorAll(".listaGeneraciones div"); // QUERY SELECTOR
+    listaGen.forEach((gen) => { // FLECHA
         gen.classList.remove("active");
     });
 
@@ -101,7 +103,7 @@ async function reGenerarMenuSeleccionPokemon(gen) {
     // Una vez cargado, se quita el gif y se añaden los nuevos bichos
     let listaDivs = await generarDivsListaPokemones(gen);
     listaPokemon.innerHTML = "";
-    listaPokemon.append(...listaDivs);
+    listaPokemon.append(...listaDivs); // DESTRUCTURING
 }
 
 function selectPokemon(pokemon) {
@@ -115,14 +117,14 @@ function selectPokemon(pokemon) {
 
     // Se guarda en cookies así al recargar la pagina se guarda el pokemon seleccionado
     // No hay tiempo de caducidad porque no pasa nada si se borra enseguida, es solo para que no se
-    // resetee todo el rato al recargar o moverte entre menús
-    document.cookie = `pokemon=${pokemon.name}`;
+    // resetee todo el rato al recargar o moverte entre menús 
+    document.cookie = `pokemon=${pokemon.name}`; // TEMPLATE LITERAL
 }
 
 function selectGeneracion(opcionGen) {
     let gen = opcionGen.slice(3);
     reGenerarMenuSeleccionPokemon(gen);
-    document.cookie = `gen=${gen}`;
+    document.cookie = `gen=${gen}`; // TEMPLATE LITERAL
 }
 
 // Función overengineered para que los numeros sigan este formato: #001 #050 #314

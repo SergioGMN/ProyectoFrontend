@@ -28,14 +28,14 @@ function crearBotonSubir() {
     botonSubir.innerHTML = "Subir";
     botonSubir.style.display = "none";
 
-    botonSubir.addEventListener("click", () => {
+    botonSubir.addEventListener("click", () => { // FLECHA
         window.scrollTo({
             behavior: "smooth",
             top: 0,
         });
     });
 
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", () => { // FLECHA
         if (window.scrollY > 200) {
             botonSubir.style.display = "block";
         } else {

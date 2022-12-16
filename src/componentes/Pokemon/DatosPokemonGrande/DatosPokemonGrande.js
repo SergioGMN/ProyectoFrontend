@@ -57,6 +57,7 @@ function capitalizarPrimeraLetra(palabra) {
 }
 
 function generarRecuadrosTipo(tipos) {
+    //OBJETO LITERAL
     let traduccion = {
         normal: "Normal",
         fighting: "Lucha",
@@ -78,6 +79,7 @@ function generarRecuadrosTipo(tipos) {
         fairy: "Hada",
     };
 
+    // ITERABLE
     return tipos
         .map((tipo) => {
             return `<div class="tipo ${tipo.type.name}" id="tipo2">${
@@ -88,6 +90,7 @@ function generarRecuadrosTipo(tipos) {
 }
 
 function createChart(data) {
+    //OBJETO LITERAL
     let config = {
         type: "radar",
         data: data,
@@ -141,9 +144,11 @@ function createChart(data) {
     return canvas;
 }
 
+// ITERABLE
 function createData(pokemonStats) {
     pokemonStats = pokemonStats.map((stat) => stat.base_stat);
 
+    //OBJETO LITERAL
     let data = {
         labels: ["HP", "Atk", "Def", "Sp. Atk", "Sp. Def", "Vel"],
         datasets: [

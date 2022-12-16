@@ -4,6 +4,7 @@ export { getDatosPokemon, getListaPokemon };
 // Ejemplo la generación 1 va desde 1 hasta 151
 // Generación 2 desde 152 hasta 251
 // Se pueden usar para el limit/offset
+//OBJETO LITERAL
 const OFFSET_GEN = {
     1: { offset: 0, limit: 151 },
     2: { offset: 151, limit: 100 },
@@ -20,8 +21,7 @@ Los pokemon son demasiado grandes como para guardarlos en el localStorage
 Por eso antes de guardarse se guardan solo los datos que se van a usar
 */
 function guardarDatosEssencialesPokemon(pokemon) {
-    // Datos que se tienen que guardar, siguiendo el formato de la API:
-    // pokemon.species.name, pokemon.types, pokemon.stats, pokemon.sprites.other["official-artwork"].front_default
+    //OBJETO LITERAL
     let datos = {
         id: pokemon.id,
         species: {
@@ -52,7 +52,7 @@ async function getDatosPokemon(pokemon) {
         return datosPokemon;
     } else {
         // Si no están los pide a la API
-        let resultadoFetch = await fetch(
+        let resultadoFetch = await fetch( // FETCH
             `https://pokeapi.co/api/v2/pokemon/${pokemon}`
         );
         let json = await resultadoFetch.json();
@@ -72,13 +72,13 @@ async function getListaPokemon(gen) {
         return listaPokemon;
     } else {
         // Si no están los pide a la API
-        let resultadoFetch = await fetch(
+        let resultadoFetch = await fetch( // FETCH
             `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
         );
-        listaPokemon = await resultadoFetch.json();
+        listaPokemon = await resultadoFetch.json(); 
         localStorage.setItem(
             `listaPokemon${gen}`,
-            JSON.stringify(listaPokemon)
+            JSON.stringify(listaPokemon) // OBJETO PREDEFINIDO
         );
     }
 
