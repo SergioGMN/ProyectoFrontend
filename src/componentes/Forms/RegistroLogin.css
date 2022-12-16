@@ -83,3 +83,8 @@
     align-items: center;
     height: 100vh;
 }
+
+.wrapper-forms a {
+    color: blue;
+    text-decoration: none;
+}

@@ -17,6 +17,6 @@ function Registro(main) {
     wrapper.classList.add("wrapper-forms");
     wrapper.append(contenidoRegistro, contenidoLogin);
 
-    main.append(Menu("Registro"), wrapper);
-    document.title = "Registro";
+    main.append(Menu("Login"), wrapper);
+    document.title = "Login";
 }

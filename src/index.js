@@ -1,4 +1,4 @@
-import { Route } from "../utils/routes.js";
+import { Route } from "./utils/routes.js";
 
 (() => {
     document.addEventListener("DOMContentLoaded", () => {

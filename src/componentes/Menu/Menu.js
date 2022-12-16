@@ -1,5 +1,7 @@
 export { Menu };
 
+import { isLogged } from '../../service/supabase/funcionesUsuario';
+
 import './menu.css';
 
 let listaLinks = [
@@ -12,11 +14,30 @@ let listaLinks = [
         url: "#/apartado2",
     },
     {
-        titulo: "Registro",
+        titulo: "Login",
         url: "#/registro",
         posicion: "derecha",
     },
 ];
+
+// Si el usuario está logeado, se cambia el link de login por el de perfil
+if (isLogged()) {
+    listaLinks = [
+        {
+            titulo: "Inicio",
+            url: "#/",
+        },
+        {
+            titulo: "Apartado 2",
+            url: "#/apartado2",
+        },
+        {
+            titulo: "Perfil",
+            url: "#/perfil",
+            posicion: "derecha",
+        },
+    ];
+}
 
 function Menu(apartadoActivo) {
     let nav = document.createElement("nav");

@@ -14,8 +14,8 @@
     bottom: 3rem;
     right: 3rem;
     padding: 10px 20px;
-    background-color: var(--color-background);
-    color: var(--color-background-link);
+    background-color: var(--color-button-primary);
+    color: var(--color-text-primary);
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -23,13 +23,13 @@
 }
 
 #boton-subir:hover {
-    background-color: var(--color-background-hover);
+    background-color: var(--color-button-hover);
 }
 
 
 #pie {
     background-color: var(--color-background);
-    color: var(--color-background-link);
+    color: var(--color-text-primary);
     padding: 2rem;
     margin-top: 2rem;
     border-top: 1px solid var(--color-border-primary);

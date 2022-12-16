@@ -6,6 +6,7 @@ import {
     registerUser,
     logoutUser,
     isLogged,
+    forgotPassword,
 } from "../../service/supabase/funcionesUsuario.js";
 
 function FormRegistro() {
@@ -66,6 +67,7 @@ function FormRegistro() {
             } else {
                 console.log(res);
                 alert("Usuario registrado correctamente!");
+                window.location.hash = "#/perfil";
             }
         });
     });
@@ -93,8 +95,12 @@ function FormLogin() {
       <input type="password" name="pass" id="pass-login">
     `;
 
+    let olvidoPass = document.createElement("a");
+    olvidoPass.innerHTML = "¿Has olvidado tu contraseña?";
+    olvidoPass.href = "#/olvidoPass";
+
     formLogin.innerHTML = formLoginHtml;
-    formLogin.append(submitLogin);
+    formLogin.append(olvidoPass, submitLogin);
     contenidoLogin.append(tituloLogin, formLogin);
 
     submitLogin.addEventListener("click", async (e) => {
@@ -110,7 +116,8 @@ function FormLogin() {
             }
 
             if (res.ok === true) {
-                alert("Usuario logeado correctamente!");
+                window.location.hash = "#/perfil";
+                window.location.reload(); // Para que se actualice el menú
             } else {
                 alert("Usuario o contraseña incorrectos!");
             }

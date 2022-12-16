@@ -41,8 +41,6 @@ function DatosPokemonGrande(pokemon) {
 
         let canvas = createChart(createData(pokemon.stats));
 
-        console.log(canvas);
-
         recuadroPokemon.append(canvas);
 
         div.append(recuadroPokemon);
@@ -137,8 +135,6 @@ function createChart(data) {
 
     let canvas = document.createElement("canvas");
     canvas.id = "chart";
-
-    console.log(canvas);
 
     new Chart(canvas, config);
 

@@ -1,0 +1,66 @@
+:root {
+    --color-background: #282c34;
+    --color-background-link: #242e2b;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #000000;
+    --color-button-primary: rgb(154, 116, 21);
+    --color-button-hover: darkgoldenrod;
+    --color-border-primary: rgba(255, 255, 255, 0.534);
+    --color-border-secondary: black;
+}
+
+.formOlvidoPass {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 20rem;
+    color: black;
+    background-color: rgb(206, 241, 255);
+    padding: 2rem;
+    border-radius: 15px;
+    min-height: 10rem;
+}
+
+.formOlvidoPass h3 {
+    font-size: 1.6rem;
+    border-bottom: 3px solid black;
+    padding-bottom: 4px;
+    text-align: center;
+}
+
+.formOlvidoPass form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formOlvidoPass input[type="text"] {
+    padding: 10px;
+    margin: 5px 0 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.formOlvidoPass label {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.2rem;
+}
+
+.formOlvidoPass button {
+    margin: 20px 0 0 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.wrapper-forms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
