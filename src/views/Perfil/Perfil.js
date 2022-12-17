@@ -17,7 +17,7 @@ async function Perfil(main) {
 
     contenido.append(
         Menu("Perfil"),
-        crearPerfil(await getUserData()),
+        crearPerfil(),
         Footer()
     );
 
